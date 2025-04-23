@@ -5,16 +5,14 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import Badge from "../ui/badge/Badge";
 import { modals } from "@mantine/modals";
-import {Button,ActionIcon} from "@mantine/core";
+import {ActionIcon} from "@mantine/core";
 import {IconEye} from "@tabler/icons-react";
 
 // Define the TypeScript interface for the table rows
 interface GData{
   keywords: string;
   clicks: number;
-  visitors: number;
   unique_visitors: number;
 }
 interface GoogleData {
@@ -23,10 +21,10 @@ interface GoogleData {
 interface Product {
   id:number;
   day: string;
-  visitors: number;
+  click: number;
   unique_visitors: number;
-  google_visitors: number;
   bing_visitors: number;
+  platform: string;
   google:GoogleData;
   bing:GoogleData;
 }
@@ -34,7 +32,7 @@ interface Product {
 interface ProductData {
   data: Product[];
   total: {
-    visitors: number;
+    clicks: number;
     unique_visitors: number;
     google_visitors: number;
     bing_visitors: number;
@@ -43,929 +41,342 @@ interface ProductData {
 
 const tableData: ProductData = {
   data: [
-    { id: 1,
-      day: "4/17/2025",
-      visitors: 4,
-      unique_visitors: 4,
-      google_visitors: 10,
-      bing_visitors: 19,
-      google: {
-        data: [
+    {
+      "id": 1,
+      "day": "2025-03-20",
+      "click": 2,
+      "unique_visitors": 0,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "slot bonuses UK",
+            "clicks": 0,
+            "unique_visitors": 0
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "best new casino",
+            "clicks": 0,
+            "unique_visitors": 0
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "instant play slot sites",
+            "clicks": 2,
+            "unique_visitors": 0
           }
         ]
       },
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      "bing": {
+        "data": []
       }
     },
-    { id: 2,
-      day: "4/16/2025",
-      visitors: 4,
-      unique_visitors: 4,
-      google_visitors: 34,
-      bing_visitors: 56,
-      google: {
-        data: [
+    {
+      "id": 2,
+      "day": "2025-03-22",
+      "click": 23,
+      "unique_visitors": 21,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "UK slots offers",
+            "clicks": 7,
+            "unique_visitors": 7
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 7,
+            "unique_visitors": 6
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "new online slots",
+            "clicks": 9,
+            "unique_visitors": 8
           }
         ]
       },
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      "bing": {
+        "data": []
       }
     },
-    { id: 3,
-      day: "4/12/2025",
-      visitors: 19,
-      unique_visitors: 15,
-      google_visitors: 123,
-      bing_visitors: 78,
-      google: {
-        data: [
+    {
+      "id": 3,
+      "day": "2025-03-23",
+      "click": 18,
+      "unique_visitors": 16,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 6,
+            "unique_visitors": 5
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top UK slots sites",
+            "clicks": 5,
+            "unique_visitors": 5
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "slot bonuses UK",
+            "clicks": 7,
+            "unique_visitors": 6
           }
         ]
       },
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      "bing": {
+        "data": []
       }
     },
-    { id: 4,
-      day: "4/9/2025",
-      visitors: 1,
-      unique_visitors: 1,
-      google_visitors: 15,
-      bing_visitors: 45,
-      google: {
-        data: [
+    {
+      "id": 4,
+      "day": "2025-03-24",
+      "click": 62,
+      "unique_visitors": 40,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "safe sites for real money",
+            "clicks": 21,
+            "unique_visitors": 13
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "instant play slot sites",
+            "clicks": 20,
+            "unique_visitors": 13
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 21,
+            "unique_visitors": 14
           }
         ]
       },
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      "bing": {
+        "data": []
       }
     },
-    { id: 5,
-      day: "4/6/2025",
-      visitors: 1,
-      unique_visitors: 1,
-      google_visitors: 30,
-      bing_visitors: 25,
-      google: {
-        data: [
+    {
+      "id": 5,
+      "day": "2025-03-25",
+      "click": 81,
+      "unique_visitors": 57,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "safe sites for real money",
+            "clicks": 27,
+            "unique_visitors": 19
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 26,
+            "unique_visitors": 18
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top UK slots sites",
+            "clicks": 28,
+            "unique_visitors": 20
           }
         ]
       },
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      "bing": {
+        "data": []
       }
     },
-    { id: 6, day: "4/3/2025", visitors: 1, unique_visitors: 0, google_visitors: 5, bing_visitors: 10,
-      google: {
-        data: [
+    {
+      "id": 6,
+      "day": "2025-03-26",
+      "click": 89,
+      "unique_visitors": 62,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 30,
+            "unique_visitors": 21
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 29,
+            "unique_visitors": 20
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "UK slots offers",
+            "clicks": 30,
+            "unique_visitors": 21
           }
         ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 7, day: "4/2/2025", visitors: 5, unique_visitors: 2, google_visitors: 99, bing_visitors: 120,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 8, day: "4/1/2025", visitors: 20, unique_visitors: 16, google_visitors: 45, bing_visitors: 67,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      } ,
-      bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
+      },
+      "bing": {
+        "data": []
       }
     },
-    { id: 9, day: "3/31/2025", visitors: 72, unique_visitors: 48, google_visitors: 76, bing_visitors: 130,
-      google: {
-        data: [
+    {
+      "id": 7,
+      "day": "2025-03-27",
+      "click": 53,
+      "unique_visitors": 39,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "slot bonuses UK",
+            "clicks": 18,
+            "unique_visitors": 13
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "instant play slot sites",
+            "clicks": 17,
+            "unique_visitors": 12
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "best new casino",
+            "clicks": 18,
+            "unique_visitors": 14
           }
         ]
-      },bing: {
-        data: [
+      },
+      "bing": {
+        "data": []
+      }
+    },
+    {
+      "id": 8,
+      "day": "2025-03-28",
+      "click": 94,
+      "unique_visitors": 68,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top UK slots sites",
+            "clicks": 31,
+            "unique_visitors": 23
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "UK slots offers",
+            "clicks": 31,
+            "unique_visitors": 22
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top online casinos",
+            "clicks": 32,
+            "unique_visitors": 23
           }
         ]
-      }  },
-    { id: 10, day: "3/30/2025", visitors: 154, unique_visitors: 110, google_visitors: 150, bing_visitors: 165,
-      google: {
-        data: [
+      },
+      "bing": {
+        "data": []
+      }
+    },
+    {
+      "id": 9,
+      "day": "2025-03-29",
+      "click": 486,
+      "unique_visitors": 446,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "top UK slots sites",
+            "clicks": 165,
+            "unique_visitors": 151
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "new online slots",
+            "clicks": 160,
+            "unique_visitors": 147
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "new online slots",
+            "clicks": 161,
+            "unique_visitors": 148
           }
         ]
-      },bing: {
-        data: [
+      },
+      "bing": {
+        "data": []
+      }
+    },
+    {
+      "id": 10,
+      "day": "2025-03-30",
+      "click": 154,
+      "unique_visitors": 110,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "safe sites for real money",
+            "clicks": 52,
+            "unique_visitors": 37
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "slot bonuses UK",
+            "clicks": 50,
+            "unique_visitors": 36
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "instant play slot sites",
+            "clicks": 52,
+            "unique_visitors": 37
           }
         ]
-      }  },
-    { id: 11, day: "3/29/2025", visitors: 486, unique_visitors: 446, google_visitors: 200, bing_visitors: 200,
-      google: {
-        data: [
+      },
+      "bing": {
+        "data": []
+      }
+    },
+    {
+      "id": 11,
+      "day": "2025-03-31",
+      "click": 72,
+      "unique_visitors": 48,
+      "platform": "Google",
+      "bing_visitors": 0,
+      "google": {
+        "data": [
           {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "UK slots offers",
+            "clicks": 24,
+            "unique_visitors": 16
           },
           {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "best new casino",
+            "clicks": 23,
+            "unique_visitors": 15
           },
           {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
+            "keywords": "slot bonuses UK",
+            "clicks": 25,
+            "unique_visitors": 17
           }
         ]
-      } ,bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      } },
-    { id: 12, day: "3/28/2025", visitors: 94, unique_visitors: 68, google_visitors: 123, bing_visitors: 99,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 13, day: "3/27/2025", visitors: 53, unique_visitors: 39, google_visitors: 77, bing_visitors: 56,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 14, day: "3/26/2025", visitors: 89, unique_visitors: 62, google_visitors: 100, bing_visitors: 85,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 15, day: "3/25/2025", visitors: 81, unique_visitors: 57, google_visitors: 150, bing_visitors: 140,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 16, day: "3/24/2025", visitors: 62, unique_visitors: 40, google_visitors: 90, bing_visitors: 100,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 17, day: "3/23/2025", visitors: 18, unique_visitors: 16, google_visitors: 60, bing_visitors: 35,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 18, day: "3/22/2025", visitors: 23, unique_visitors: 21, google_visitors: 45, bing_visitors: 65,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 19, day: "3/21/2025", visitors: 5, unique_visitors: 0, google_visitors: 20, bing_visitors: 30,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  },
-    { id: 20, day: "3/20/2025", visitors: 2, unique_visitors: 0, google_visitors: 15, bing_visitors: 10,
-      google: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      },bing: {
-        data: [
-          {
-            keywords: "2025 gambling reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "best new casino",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          },
-          {
-            keywords: "legit casino reviews",
-            clicks: 0,
-            visitors: 0,
-            unique_visitors: 0
-          }
-        ]
-      }  }
+      },
+      "bing": {
+        "data": []
+      }
+    }
   ],
-  total: {
-    visitors: 4197,
-    unique_visitors: 951,
-    google_visitors: 1467,
-    bing_visitors: 1535
+  "total": {
+    "clicks": 1134,
+    "unique_visitors": 907,
+    "google_visitors": 907,
+    "bing_visitors": 0
   }
 };
 
@@ -990,9 +401,6 @@ export default function RecentOrders() {
                     Click
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Visitors
-                  </th>
-                  <th scope="col" className="px-6 py-3">
                     Unique Visitors
                   </th>
                 </tr>
@@ -1005,9 +413,6 @@ export default function RecentOrders() {
                       </th>
                       <td className="px-6 py-4">
                         {data.clicks}
-                      </td>
-                      <td className="px-6 py-4">
-                        {data.visitors}
                       </td>
                       <td className="px-6 py-4">
                         {data.unique_visitors}
@@ -1039,9 +444,6 @@ export default function RecentOrders() {
                     Click
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Visitors
-                  </th>
-                  <th scope="col" className="px-6 py-3">
                     Unique Visitors
                   </th>
                 </tr>
@@ -1054,9 +456,6 @@ export default function RecentOrders() {
                       </th>
                       <td className="px-6 py-4">
                         {data.clicks}
-                      </td>
-                      <td className="px-6 py-4">
-                        {data.visitors}
                       </td>
                       <td className="px-6 py-4">
                         {data.unique_visitors}
@@ -1075,7 +474,7 @@ export default function RecentOrders() {
         <div className="flex flex-col gap-2 mb-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-              Recent Campaigns
+              Archived Keywords
             </h3>
           </div>
 
@@ -1097,7 +496,7 @@ export default function RecentOrders() {
                     isHeader
                     className="py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
-                  Visitors
+                  Click
                 </TableCell>
                 <TableCell
                     isHeader
@@ -1109,7 +508,7 @@ export default function RecentOrders() {
                     isHeader
                     className="py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
                 >
-                  Google Visitors
+                  Platform
                 </TableCell>
                 <TableCell
                     isHeader
@@ -1128,14 +527,14 @@ export default function RecentOrders() {
                     <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400">
                       {product.day}
                     </TableCell>
-                    <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 text-center">
-                  {product.visitors}
+                    <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400">
+                  {product.click}
                 </TableCell>
-                <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 text-center">
+                <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400">
                   {product.unique_visitors}
                 </TableCell>
-                <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 text-center">
-                  {product.google_visitors}
+                <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400">
+                  Google
                   <div className="ml-2">
                     <ActionIcon variant="filled" aria-label="Settings"
                                 onClick={() => {
@@ -1146,7 +545,7 @@ export default function RecentOrders() {
                     </ActionIcon>
                   </div>
                 </TableCell>
-                    <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 text-center">
+                    <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400">
                       {product.bing_visitors}
                       <div className="ml-2">
                         <ActionIcon variant="filled" aria-label="Settings"
@@ -1164,7 +563,7 @@ export default function RecentOrders() {
                   Total
                 </TableCell>
                 <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 font-bold">
-                  {tableData.total.visitors}
+                  {tableData.total.clicks}
                 </TableCell>
                 <TableCell className="py-3 text-gray-500 text-theme-sm dark:text-gray-400 font-bold">
                 {tableData.total.unique_visitors}

@@ -3,20 +3,20 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
-  BoxCubeIcon,
+  // BoxCubeIcon,
   CalenderIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
   ListIcon,
-  PageIcon,
-  PieChartIcon,
-  PlugInIcon,
-  TableIcon,
+  // PageIcon,
+  // PieChartIcon,
+  // PlugInIcon,
+  // TableIcon,
   UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
-import SidebarWidget from "./SidebarWidget";
+// import SidebarWidget from "./SidebarWidget";
 
 type NavItem = {
   name: string;
@@ -47,11 +47,11 @@ const navItems: NavItem[] = [
     name: "Payments",
     path: "/payments",
   },
-  {
-    icon: <TableIcon />,
-    name: "Postback",
-    path: "/postback",
-  },
+  // {
+  //   icon: <TableIcon />,
+  //   name: "Postback",
+  //   path: "/postback",
+  // },
   // {
   //   icon: <ListIcon />,
   //   name: "Forms",
@@ -319,14 +319,14 @@ const AppSidebar: React.FC = () => {
             <>
               <img
                 className="dark:hidden"
-                src="/images/logo/logo.svg"
+                src="/images/logo/logo.png"
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <img
                 className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
+                src="/images/logo/logo-dark.png"
                 alt="Logo"
                 width={150}
                 height={40}
